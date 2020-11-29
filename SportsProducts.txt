@@ -1,0 +1,4 @@
+danel,danel,34,56,hanek
+grm,grm,23,76,grm
+ban,ana,0,3,nana
+barak,obama,12,44,barakball
