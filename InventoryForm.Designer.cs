@@ -50,6 +50,8 @@ namespace FinalProjectVersion2
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEditProducts = new System.Windows.Forms.Button();
             this.btnDeleteProducts = new System.Windows.Forms.Button();
+            this.btnBackToAdd = new System.Windows.Forms.Button();
+            this.btnShowCustomers = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,9 +203,9 @@ namespace FinalProjectVersion2
             // 
             // btnShowProducts
             // 
-            this.btnShowProducts.Location = new System.Drawing.Point(249, 91);
+            this.btnShowProducts.Location = new System.Drawing.Point(263, 91);
             this.btnShowProducts.Name = "btnShowProducts";
-            this.btnShowProducts.Size = new System.Drawing.Size(75, 23);
+            this.btnShowProducts.Size = new System.Drawing.Size(145, 23);
             this.btnShowProducts.TabIndex = 12;
             this.btnShowProducts.Text = "Products";
             this.btnShowProducts.UseVisualStyleBackColor = true;
@@ -238,11 +240,33 @@ namespace FinalProjectVersion2
             this.btnDeleteProducts.UseVisualStyleBackColor = true;
             this.btnDeleteProducts.Click += new System.EventHandler(this.btnDeleteProducts_Click);
             // 
+            // btnBackToAdd
+            // 
+            this.btnBackToAdd.Location = new System.Drawing.Point(26, 429);
+            this.btnBackToAdd.Name = "btnBackToAdd";
+            this.btnBackToAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnBackToAdd.TabIndex = 19;
+            this.btnBackToAdd.Text = "Back to Add";
+            this.btnBackToAdd.UseVisualStyleBackColor = true;
+            this.btnBackToAdd.Click += new System.EventHandler(this.btnBackToAdd_Click);
+            // 
+            // btnShowCustomers
+            // 
+            this.btnShowCustomers.Location = new System.Drawing.Point(409, 91);
+            this.btnShowCustomers.Name = "btnShowCustomers";
+            this.btnShowCustomers.Size = new System.Drawing.Size(145, 23);
+            this.btnShowCustomers.TabIndex = 20;
+            this.btnShowCustomers.Text = "Customers";
+            this.btnShowCustomers.UseVisualStyleBackColor = true;
+            this.btnShowCustomers.Click += new System.EventHandler(this.btnShowCustomers_Click);
+            // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 464);
+            this.Controls.Add(this.btnShowCustomers);
+            this.Controls.Add(this.btnBackToAdd);
             this.Controls.Add(this.btnDeleteProducts);
             this.Controls.Add(this.btnEditProducts);
             this.Controls.Add(this.btnAdd);
@@ -291,5 +315,7 @@ namespace FinalProjectVersion2
         private System.Windows.Forms.Button btnEditProducts;
         private System.Windows.Forms.Button btnDeleteProducts;
         public System.Windows.Forms.DataGridView dgvInventory;
+        private System.Windows.Forms.Button btnBackToAdd;
+        private System.Windows.Forms.Button btnShowCustomers;
     }
 }

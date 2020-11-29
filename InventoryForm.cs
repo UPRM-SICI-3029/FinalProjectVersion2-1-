@@ -13,6 +13,7 @@ namespace FinalProjectVersion2
 {
     public partial class InventoryForm : Form
     {
+        const int MINIMUM_STOCK = 0;
         int selectedRow, stock, oldStock, addOrSubtractStock, newStock;
         double price;
         string productId, productName, sportsCategory;
@@ -31,6 +32,11 @@ namespace FinalProjectVersion2
             price = Convert.ToDouble(txtPrice.Text);
             sportsCategory = txtSportsCategory.Text;
             newStock = oldStock + addOrSubtractStock;
+            if (newStock < MINIMUM_STOCK)
+            {
+                newStock = MINIMUM_STOCK;
+                MessageBox.Show("The minimum stock must be 0");
+            }
             dgvInventory[0, selectedRow].Value = productId;
             dgvInventory[1, selectedRow].Value = productName;
             dgvInventory[2, selectedRow].Value = newStock;
@@ -50,6 +56,17 @@ namespace FinalProjectVersion2
             SaveDGV();
             CreateDGV();
             ReturnAndClean();
+        }
+
+        private void btnBackToAdd_Click(object sender, EventArgs e)
+        {
+            ReturnAndClean();
+        }
+
+        private void btnShowCustomers_Click(object sender, EventArgs e)
+        {
+            CustomerForm customers = new CustomerForm();
+            customers.ShowDialog();
         }
 
         private void dgvInventory_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -124,7 +141,6 @@ namespace FinalProjectVersion2
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            const int MINIMUM_STOCK = 0;
             const double MINIMUM_PRICE = 0.01;
             try
             {
